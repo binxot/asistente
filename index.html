@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="voz.js"></script>
+        <script src="asistente.js"></script>
+        <script src="reloj.js"></script>
+        <title>Asistente</title>
+        <link rel="icon" href="iconos/icon.png">
+    </head>
+    <body>
+        <section>
+            <article>
+                <p id="hora"></p>
+                <img src="iconos/gif.gif" alt="animation" height="100px"/><br/>
+                <button id="btn" onclick="speechRecognition()">Empezar a escuchar</button><br/>
+                <p><b>Entrada: </b><i id="entrada">Nada todavía.</i></p>
+                <p><b>Respuesta: </b><i id="respuesta"></i></p>       
+                <select id="speech-select"></select>         
+            </article>
+        </section>
+    </body>
+</html>
