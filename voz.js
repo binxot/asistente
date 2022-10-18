@@ -51,3 +51,13 @@ function narra(){
     utterance.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == document.getElementById("speech-select").value; })[0];
     speechSynthesis.speak(utterance);
 }
+
+//ServiceWorker
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+      navigator.serviceWorker
+        .register("/serviceWorker.js")
+        .then(res => console.log("service worker registered"))
+        .catch(err => console.log("service worker not registered", err))
+    })
+}
