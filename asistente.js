@@ -1,19 +1,19 @@
-var dia = new Date(), 
- hora = dia.getHours();
+var chistes= [
+    "Me sacaron del grupo de WhatsApp de paracaidismo. Se ve que no caía bien.",
+    "¿Qué le dice un jardinero a otro? Seamos felices mientras podamos.",
+    "Eliminar correos no deseados es muy fácil: spam comido.",
+    "¿Cómo se les llama a 2 zombis que hablan distintas lenguas? Zombilingües.",
+    "Una vez conté un chiste químico, pero no hubo reacción.",
+    "Un león se comió un jabón. Y ahora es puma.",
+    "¿Qué hace una vaca con los ojos cerrados? Leche concentrada.",
+    "Si los ciempiés tienen 100 pies... ¿entonces los piojos tienen 3,14 ojos?",
+    "¿Por qué la gallina cuida tanto a sus pollitos? Porque le costó un huevo tenerlos.",
+    "En Hawái no te hospedan: te alohan."
+];
 
 window.onload = function() {
-    getHora();
+    reloj();
     saluda();
-}
-
-function saluda() {
-    if(hora >= 6 && hora < 12) {
-        document.getElementById("respuesta").textContent = "Buenos dias, ¿en que puedo ayudarte?";
-    }else if(hora >= 12 && hora <= 21) {
-        document.getElementById("respuesta").textContent = "Buenas tardes,  ¿en que puedo ayudarte?";
-    }else {
-        document.getElementById("respuesta").textContent = "Buenas noches, ¿en que puedo ayudarte?";
-    }
 }
 
 function responde(m){
@@ -87,9 +87,21 @@ function responde(m){
                 
         }
     }
+    else if(m.includes("chiste") || m.includes("chistecito") || m.includes("chistazo")){ //Chistes aleatorios
+        var n= Math.floor(Math.random() * 10);
+        console.log(n);
+        document.getElementById("respuesta").textContent = chistes[n];
+    }
+    else if(m.includes("que hora es") || m.includes("qué hora es") || m.includes("dime la hora")) { 
+        document.getElementById("respuesta").textContent = "Son las "+ getHora() + " con " + getMinuto() + " minutos.";
+    }
     //El resto de preguntas las buscará en google.
-    else if(m.includes("qué") || m.includes("cómo") || m.includes("quíen") ||  m.includes("cuándo") ||
-            m.includes("dónde") || m.includes("por qué") || m.includes("significado de") || m.includes("definición de")) {
+    else if(m.includes("qué") || m.includes("que") || m.includes("cómo") || m.includes("como") || m.includes("quíen") || m.includes("quien") ||
+        m.includes("cuándo") || m.includes("cuando") || m.includes("dónde") ||  m.includes("donde") || m.includes("significado de") || 
+        m.includes("definición de") || m.includes("cual") || m.includes("cuál") || m.includes("cuales") || m.includes("cuáles") ||
+        m.includes("cuanto") || m.includes("cuánto") || m.includes("cuantos") || m.includes("cuántos") || m.includes("cuanta") || 
+        m.includes("cuánta") || m.includes("cuantas") || m.includes("cuántas") || m.includes("quiénes") || m.includes("quienes")) {
+
         window.open(`https://www.google.com/search?q=${m.replace(" ", "+")}`, "_blank");
         document.getElementById("respuesta").textContent = "Estoy buscando información sobre " + m + " en google.";
     }
