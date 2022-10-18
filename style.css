@@ -3,9 +3,9 @@
 }
 
 body{
-    background-image: url("fondos/bg1.jpg");
+    background-image: url("fondos/bg2.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: fixed;
 }
 
 section{
@@ -25,6 +25,7 @@ article{
     color: white;
     padding: 20px 50px;
     border-radius: 10px;
+    min-width: 500px;
 }
 
 button{
@@ -33,14 +34,14 @@ button{
 	background: linear-gradient(95.2deg, #184e68 -3.82%, #57ca85 106.31%);
 	border-radius:  1em;
     border: none;
-    font-size: 15px;
+    font-size: 25px;
 }
 button:hover{
     background: linear-gradient(95.2deg, #57ca85 -3.82%, #184e68 106.31%);
 }
 
 p, #respuesta{
-    font-size: 15px;
+    font-size: 25px;
 }
 
 select{
