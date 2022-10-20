@@ -6,7 +6,7 @@ const assets = [
     "/voz.js",
     "/reloj.js",
     "/asistente.js",
-    "/fondos/bg1.jpg",
+    "/serviceWorker.js",
     "/fondos/bg2.jpg",
     "/iconos/config.png",
     "/iconos/gif.gif",
@@ -28,3 +28,13 @@ fetchEvent.respondWith(
     })
 )
 })
+
+//ServiceWorker
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+      navigator.serviceWorker
+        .register("/serviceWorker.js")
+        .then(res => console.log("service worker registered"))
+        .catch(err => console.log("service worker not registered", err))
+    })
+}

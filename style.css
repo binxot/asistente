@@ -5,7 +5,8 @@
 body{
     background-image: url("fondos/bg2.jpg");
     background-repeat: no-repeat;
-    background-size: fixed;
+    background-size: 100% cover;
+    background-color: black;
 }
 
 section{
